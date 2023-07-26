@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Pseudo-Selectors></title>
+    <style>
+        table {
+            border:1px solid grey;
+            border-collapse: collapse; /*kollidierende rahmen in tabellen vermeiden*/
+        }
+
+        td{
+            border: 1px solid grey;
+        }
+
+        td:first-child{   /*Pseudo-selector für erstes kind von <tr>*/
+            background-color: rgb(230, 230, 230);
+        }
+
+        td:last-child{
+            background-color: rgb(230, 210, 210); /*Pseudo-selector für (zahl) kind von <tr>*/
+        }
+
+        td:nth-child(2){
+            background-color: rgb(210, 210, 240);  /*Pseudo-selector für letztes kind von <tr>*/
+        }
+
+        tr:nth-child(2){
+            background-color: rgb(8, 200, 78);
+        }
+      
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Zelle1</td> <!--first-child-->
+                <td>Zelle2</td> <!--nth-child (2)-->
+                <td>Zelle3</td> <!--last-child-->
+            </tr>
+            <tr>
+                <td>Zelle1</td> <!--first-child-->
+                <td>Zelle2</td> <!--nth-child (2)-->
+                <td>Zelle3</td> <!--last-child-->
+            </tr>
+            <tr>
+                <td>Zelle1</td> <!--first-child-->
+                <td>Zelle2</td> <!--nth-child (2)-->
+                <td>Zelle3</td> <!--last-child-->
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <table class="2">
+        <tbody>
+            <tr>
+                <td>Zelle1</td> <!--first-child-->
+                <td>Zelle2</td> <!--nth-child (2)-->
+                <td>Zelle3</td> <!--last-child-->
+            </tr>
+            <tr>
+                <td>Zelle1</td> <!--first-child-->
+                <td>Zelle2</td> <!--nth-child (2)-->
+                <td>Zelle3</td> <!--last-child-->
+            </tr>
+            <tr>
+                <td>Zelle1</td> <!--first-child-->
+                <td>Zelle2</td> <!--nth-child (2)-->
+                <td>Zelle3</td> <!--last-child-->
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

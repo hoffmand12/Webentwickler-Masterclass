@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+
+        button{
+            margin: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="top">Anzahl an Schülern</h1>
+    <button type="button" id="mybutton">+1</button> <!--Inline JavaScript-->
+    <button type="button" id="reset">Zurücksetzen</button>
+    
+
+
+    <!--<script/> Tag für Inetrnal JavaScript-->
+<script> 
+
+document.getElementById ("mybutton").onclick= function (){
+   // anzahl= anzahl + 1;
+    //anzahl++;       //inkrementieren//
+    anzahl +=1;
+    console.log("Ich bin in der console");   
+    console.log("Willkommen in der console, Daniel");
+
+    document.getElementById("top").innerHTML ="Anzahl an Schülern:  " + anzahl ;
+}
+
+document.getElementById ("reset").onclick= function (){
+    document.getElementById("top").innerHTML ="Anzahl an Schülern:  " + anzahl ;
+    anzahl=0;
+
+
+}
+
+    var name= "Sissi";
+    var nachname;
+   var anzahl= 0
+
+</script>
+
+</body>
+</html>

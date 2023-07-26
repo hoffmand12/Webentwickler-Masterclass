@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+
+        
+        
+
+    </style>
+</head>
+<body>
+    <h1 id="top">Hallo...</h1>
+    <input type="text" name="name" id="name">
+    <input type="number" name="alter" id="alter">
+    <button type="button" id="mybutton">Übermitteln</button> <!--Inline JavaScript-->
+    
+    <script> 
+   
+    
+   
+   
+/*script/> Tag für Inetrnal JavaScript*/
+
+document.getElementById ("mybutton").onclick= function (){
+    var name = document.getElementById("name").value;
+    var alter= document.getElementById("alter").value;
+    var text = ""; 
+        if(alter < 16){                                  /*höchste prio hat if. wenn if niocht erfüllt dann else if*/
+            text = "Hallo " + name + " du darfst bis 22 Uhr raus";
+        }else if(alter < 18){
+            text = "Hallo " + name + " du darfst bis 24 Uhr raus";
+        }else{
+            text = "Hallo " + name + " du kannst machen was du willst";
+        }
+
+
+        if(name=="Franzi"){                
+            text= "Du darfst gar nicht erst raus- Hausarrest!"
+        }
+
+    document.getElementById("top").innerHTML = text;
+
+
+}
+
+
+
+
+
+    
+
+</script>
+
+</body>
+</html>

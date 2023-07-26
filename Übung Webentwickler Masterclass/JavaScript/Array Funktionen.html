@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Arrys</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1 id="top">Hallo ...</h1>
+    <script>
+        var zahlenArrray= new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+        
+        var produkte= new Array("Galaxy S1","Galaxy S2","Galaxy S3","Galaxy S4","Galaxy S5");
+        console.log(produkte);
+        var ausgegliedertesprodukt = produkte.pop();
+        console.log (ausgegliedertesprodukt);
+        console.log(produkte.pop());
+        
+        produkte.push("Galaxy S6");
+        console.log(produkte);
+        var erstesElement = produkte.shift();
+        console.log(erstesElement);
+        produkte.unshift(["Galaxy S7","Galaxy S8"]);
+        console.log(produkte);
+        produkte.splice(2,0, "Galaxy S1", "Galaxy S5");
+        console.log(produkte);
+        produkte.sort();
+        console.log(produkte);
+        produkte.splice(3,0, "Galaxy S4");
+        produkte.reverse();
+        console.log(produkte.toString());
+        console.log(produkte.join(" * "));
+
+    </script>
+
+</body>
+
+</html>

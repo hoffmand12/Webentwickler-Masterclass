@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    <title>Javascript</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1 id="top">Hallo...</h1>
+  
+    <script>
+                //globale Variable
+                var zahl3= 5;
+
+                function addieren(parameter1,parameter2){
+                //wandeln den String in einen Int um also einen text in eine Zahl//
+                    parameter1 = parseInt(parameter1);
+                    parameter2 = parseInt(parameter2);
+                    //lokale variable
+                    var ergebnis = parameter1 + parameter2;
+                    console.log(zahl3);
+                    return ergebnis;
+            }
+
+           
+            addieren (13,37);
+            hochrechnen(3)
+            
+            
+            function hochrechnen(zahl){
+                
+                zahl = zahl3
+                console.log ("quadriert: " + (zahl*zahl));
+                console.log ("hochdrei: " + (zahl*zahl*zahl));
+                console.log ("hochvier: " + (zahl*zahl*zahl*zahl));
+                }
+    </script>
+</body>
+</html>

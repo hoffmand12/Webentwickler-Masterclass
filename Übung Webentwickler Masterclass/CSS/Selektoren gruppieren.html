@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selektoren gruppieren</title>
+</head>
+<style>
+    h1,p{color:blue} /*mehrere tags mittels , trennen und gemeinsam selektieren*/
+     
+    div p{color:red} /*div p oder =alle p´s die sich in div´s befinden sind betroffen*/                           
+    div+p{color: green;} /*div+p=alle p die ach div kommen sind betroffen*/
+    div > p{color: gold;} /* Parent div tag ist größer als p, p befindet sich unter div=children von div*/
+    #rot{color: red;}
+</style>                    
+
+<body>
+    <h1>Selektoren gruppieren</h1>      <!--SPAN ALS PUFFER UM UNTERHIERACHIE ANZULEGEN-->
+    
+    <div> <!--Parent-->
+        <h2>Überschrift h2</h2><!--Child-->
+        <p>Absatz1</p><!--Child-->
+
+    </div>
+    <p>Absatz2</p>
+    <h2>Überschrift <span id="rot">die nicht</span> betroffen ist</h2>  
+
+    <div><!--Parent-->
+        
+        <span><!--Child-->
+            <p>Absatz3</p><!--Grandchild of div-->
+        </span>
+
+    </div>
+    
+
+    
+</body>
+</html>
