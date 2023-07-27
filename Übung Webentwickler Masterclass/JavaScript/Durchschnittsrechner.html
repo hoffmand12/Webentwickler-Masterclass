@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1 id="top">Hallo...</h1>
+
+    <script>
+
+        var anzahlaneintraegen = 0;
+        var gesamtwert = 0;
+        var input = "";
+        var inputnumber;
+        while (input != "0") {
+            input = prompt("Nächste Zahl bitte! Gebe 0 ein um zu beenden");
+            if (parseInt(input)) {
+                inputnumber = parseInt(input);
+                if (inputnumber != 0) {
+                    gesamtwert += inputnumber;
+                    anzahlaneintraegen++;4
+                }
+
+
+            }else{
+                //document.write("Du hast etwas anderes als eine Zahl eingegeben!");
+                break;
+
+            }
+        }
+
+        var ergebnis = gesamtwert / anzahlaneintraegen
+        document.write("Der Durchschnitt ist " + ergebnis);
+
+    </script>
+</body>
+
+</html>
