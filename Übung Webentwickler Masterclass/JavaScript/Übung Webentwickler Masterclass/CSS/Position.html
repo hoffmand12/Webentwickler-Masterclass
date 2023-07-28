@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        .fixed{position:fixed;left: 50px;top: 50%;background-color: aqua;width: 50px; height: 50px;}
+        .sticky{position:-webkit-sticky /*safari*/;position: sticky;top: 0;background-color: brown;border: 2px solid red;}
+         
+
+        .container{
+            position: relative;width: 500px;
+        }
+        .obenlinks{position: absolute; top: 10px;left: 20px; font-size: 22px; color: white;}
+        .mitte{position:absolute;top: 50%;left: 0;width: 100%;text-align: center;font-size: 22px;background-color: aqua;}
+        .img{width: 100%;}
+
+    </style>
+</head>
+
+<body>
+    <h2>Position</h2>
+    <div class="sticky">Ich klebe</div>
+    <div class="fixed">Fixiert</div>
+    <p>Hier noch text eingefügt</p>
+    <div class="container">
+        <img src="gras.jpg">
+        <div class="obenlinks">obenlinks</div>
+        <div class="mitte">mitte</div>
+    </div>
+</body>
+
+</html>

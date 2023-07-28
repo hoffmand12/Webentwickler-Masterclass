@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1 id="top">Hallo...</h1>
+
+    <script>
+
+        for (i = 10; i >0; i--){
+            document.write("zaehlerwert ist: "+ i + "<br>");
+        }
+
+        "<br>"
+        
+        for (zaehler = 0; zaehler <10; zaehler++){
+            document.write("zaehlerwert ist: "+ zaehler + "<br>");
+        }
+
+        var freunde = ["Frank","Michi","Sissi","Maria"];
+        var len = freunde.length;
+        var text = "";
+        for(i=0; i<len;i++){
+            freunde [i] = freunde[i] + " buddy"
+            text += freunde[i] + "<br>";
+        }
+        document.write (text);
+        
+        /*zaehler =0;
+        while(zaehler <10){
+            document.write("Zaehler " + zaehler + "<br>")
+            zaehler++;
+
+       }
+       document.write("<br>Fertig mit der Schleife");
+        /*
+        var zaehler = 5;
+        do{ 
+                document.write("<br>Zaehler ist:" + zaehler)
+                zaehler--;
+        }while(zaehler >=10);
+document.write("<br>Fertig mit der Schleife");
+        */
+
+    </script>
+</body>
+
+</html>

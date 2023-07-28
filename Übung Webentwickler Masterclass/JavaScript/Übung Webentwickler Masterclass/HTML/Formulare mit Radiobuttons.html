@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulare</title>
+</head>
+<body>
+    <h2>HTML-Formulare </h2>
+    <form>
+        <fieldset> <!--Rahmen um formulare-->
+            <input type="radio" name="Geschlecht" value="maennlich">maennlich<br>      
+            <input type="radio" name="Geschlecht" value="weiblich">weiblich<br>
+            <input type="radio" name="Geschlecht" value="divers"checked>divers<br>
+        </fieldset> <!--radio=Radioknopf (jeweils nur ein knopf aktiv)-->
+             <!--checked=autom. standardauswahl-->
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Weitere Input Typen</h2>
+    <form>
+        <fieldset>
+            <input type="checkbox" name="pizza" value="Schinken">Schinken <br>
+            <input type="checkbox" name="pizza" value="Salami">Salami<br>
+            <input type="checkbox" name="pizza" value="Pilze">Pilze
+        </fieldset>
+
+    </form>
+<h2>Email</h2>
+<form>
+    Email:
+    <input type="email" name="Email" minlength="8" maxlength="20" size="40"
+    autocomplete="on" placeholder="Platzhalter" autofocus>
+</form>
+<h2>Farbe auswählen</h2>
+    <form>
+        Wähle deine Lieblingsfarbe:<br>
+        <input type="color" name="favcolor"><br>
+    </form>
+
+</form>
+<h2>Datum</h2>
+    <form>
+        Wähle dei Geburtsdatum:<br>
+        <input type="date" name="Geburtstag"><br>
+    </form>
+
+</form>
+<h2>Datei übertragen</h2>
+    <form>
+        Datei übermitteln:<br>
+        <input type="file" name="MyFile"><br>
+    </form>
+
+</form>
+<h2>Zahl</h2>
+    <form>
+        Wie viele Gäste:<br>
+        <input type="number" name="Anzahl" min="1" max="10"><br>
+    </form>
+
+    <form>
+    
+    </form>
+
+    <!--Input Attribute auf w3schools.com-->
+
+
+
+    <br>
+    <br>
+</body>
+
+
+</html>

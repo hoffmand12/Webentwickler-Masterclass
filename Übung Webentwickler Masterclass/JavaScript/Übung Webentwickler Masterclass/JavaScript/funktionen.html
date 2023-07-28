@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funktionen</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1 id="top">Hallo ...</h1>
+    <input type="number" id ="zahl">
+    <button type="button" id="myButton" onclick="hochrechnen();">Rechnen</button>
+    <script>
+        
+        
+
+        function hochrechnen(){
+            var zahl = document.getElementById("zahl").value;
+            console.log("Quadriert: " + (zahl*zahl));
+            console.log("Hoch drei: "+ (zahl*zahl*zahl));
+            console.log("Hoch vier: "+ (zahl*zahl*zahl*zahl));
+        }
+
+        hochrechnen();
+
+
+
+    </script>
+
+</body>
+</html>

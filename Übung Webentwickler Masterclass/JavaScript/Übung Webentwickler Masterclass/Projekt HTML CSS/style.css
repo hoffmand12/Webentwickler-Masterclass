@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(200, 200, 200);
+    font-family: bai jamjuree;
+    font-size: 16px;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgb(128, 128, 128);
+    border: 1px solid rgb(100, 100, 100);
+    padding: 10px;
+    width: auto;
+    /*margin-top: 25px;
+    margin-bottom:25px;
+    margin-left: auto;
+    margin-right: auto;*/
+
+    /*margin:25px auto 25px auto;*/
+    margin: 25px auto 0px auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 0px;
+    background-size:cover;
+    
+}
+
+
+.container img {
+    width: 300px;
+    margin: 0px auto;
+    display: block;
+    /* Bild ist Inline element. Muss aus Textfluss mit <display: block> aus textfluss raus*/
+    border-radius: 5px;
+    box-shadow: 8px 15px 52px -14px rgba(0, 0, 0, 0.56);
+    /*https://www.cssmatic.com/box-shadow*/
+}
+
+.container h1 {
+    margin-top: 0px;
+    /*box-shadow:5px 5px 0px orange;*/
+    text-shadow: 0px 0px 5px white;
+    font-weight: normal;
+}
+
+.footer-container {
+    width: 400px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 0, 8em;
+}
+
+.footer-container a {
+    color: rgb(50, 50, 50);
+    text-shadow: 0px 0px 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
