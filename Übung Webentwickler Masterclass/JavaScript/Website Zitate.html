@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zitate Website</title>
+    <style>
+        .page-header {
+            background-color: rgb(38, 114, 152);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .page-content {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 20px 10px;
+        }
+
+        .page-content p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+        }
+
+        #next {
+            background-color: rgb(38, 114, 152);
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            margin: 0 auto;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        #next:hover {
+            background-color: rgb(31, 138, 192);
+        }
+
+        #quoteFrom {
+            font-style: italic
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+
+    <header class="page-header">
+        <h3>Zitate</h3>
+    </header>
+    <div class="page-content">
+        <button id="next" onclick="randomize();">Nächstes Zitat</button>
+        <p id="quote">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore
+            magna aliqua. Mauris cursus mattis molestie a. Nunc consequat interdum varius sit amet. Ornare quam viverra
+            orci sagittis eu volutpat odio. Ullamcorper sit amet risus nullam.</p>
+        <p id="quoteFrom">George Bush</p>
+    </div>
+
+    <script>
+        var quotesArr = ["Vielleicht hätte Sie das böse nicht für einen so außergewöhnlich seltenen, aus allen Gewohnheiten herausführenden und dadurch erholenden Zustand gehalten, wenn Sie die in sich selbst die auch in allen anderen Menschen vorhandene Gleichgültigkeit gegen Leiden die man selbst schafft erkannt hätte, jene Indifferenz, die, welchen Namen man ihr auch geben mag, einfach die fürchterliche Gestalt ist, in der die Grausamkeit in Permanenz erscheint.",
+            "Das tief innerliche, unmittelbare Gefühl von der Nichtigkeit meines Denkens war stärker als alle Schmeichelhaften reden die man an mich richten mochte, wie bei einem bösen Menschen, dessen gute Taten jedermann rühmt , die Stimme des eigenen Gewissens.",
+            "Sie und ich, wir sind beide nicht Reich. Doch so weit wie die Verantwortung reicht, sind wir in einer Position, hier und heute, die schlimmste Form der Agonie von Menschen zu lindern, die am verhungern sind. Gleichgültigkeit gegen Leiden die man schafft, ist die Grausamkeit in Permanenz.",
+            "Drohender Tod ist nichts neues. Dieser jedoch ist so sinnlos und Grausam. Nichts bleibt uns als darauf zu schauen, mit dem Blick der verdammten, die nach inne zu blicken scheinen. Unbeweglich, Gefangen in dieser letzten Wirklichkeit.",
+            "Ich glaube eine Menge Leute haben es aufgegeben, die Dinge begreifen zu wollen. Wenn ihnen die Physikalische Welt verschlossen bleibt, dann auch die Gesellschaftliche, die Politische Welt. Wenn wir es aufgeben, die Dinge verstehen zu wollen, dann werden wir alle untergehen.",
+            "Geh nicht gelassen in die Gute Nacht, brenn, alter, rase, wenn das Dunkel sich legt. Im sterbend Licht sei doppelt Zorn entfacht. Weil kein Funken je ihr Wort erbracht, Weise, gewiss, das Dunkel rechtens lauert, geh nicht gelassen in die Gute Nacht. Wer seines schwachen tuns, rühmt künftge Pracht, Im Sinken, hätt nur Grünes blühn gedauert, Im Sterbend Licht bist doppelt Zorn entfacht. Wer jagt und preist der fliehenden Sonne Macht und lernt zu spät, dass nur sie betrauert, geh nicht gelassen in die gute Nacht. Wer Todesnah erkennt im blinden Schacht, Das Auge blind, noch blitzt, noch froh erschauert. Im sterbend Licht ist doppelt Zorn entfacht. Und du mein Vater dort auf Todeswacht. Fluch segne mich, von Tränen Wut vermauert. Geh nicht gelassen in die Gute Nacht, im Sterbend Licht sei doppelt Zorn entfacht.",
+            "Das Leben selbst führt uns nach und nach, von Fall zu Fall, zu der Wahrnehmung, dass alles das, was uns für unser Herz oder für unseren Geist das Allerwichtigste ist, uns nicht durch vernunftmäßige Überlegung zuteil wird, sondern durch andere Mächte.",
+            "Eine der Ursachen aber für die unaufhörlichen Enttäuschungen in der Liebe liegt vielleicht in diesen ständigen Abweichungen, die bewirken, dass, während wir auf das ideale Wesen warten, das wir lieben, jede Begegnung uns eine Person aus Fleisch und Blut entgegenführt, die bereits sehr wenig von unserem Traum enthält.",
+            "übrigen gilt für alle Ereignisse, die im Leben und in seinen widersprüchlichen Situationen sich auf die Liebe beziehen, dass man sie am besten gar nicht zu verstehen versucht, da sie in allem, was sie an Unerbittlichkeit und Unverhofftem an sich haben, eher magischen als rationalen Gesetzen zu unterstehen scheinen.",
+            "Man kann von einem Leiden nicht genesen, wenn man es nicht in ganzer Stärke durchlebt.",
+            "Wenn man zu lieben beginnt, verbringt man seine Zeit nicht damit, zu ergründen, was diese Liebe ist, sondern damit, die Möglichkeit eines Wiedersehens für den folgenden Tag anzubahnen.",
+            "Kiss or kill, lauf oder Stirb! Hol dir den Siegeskranz, oder stirb bei dem Versuch, ihn zu erlangen. Verlieren heißt sterben, gewinnen heißt Leben. Der Kampf ist es, der dich zum Sieg führt, zum Sieger macht. Wie oft hast du vor Wut und Schmerz geweint? Wie oft hast du vor Erschöpfung dein Erinnerungsvermögen, deine Stimme und deine Urteilskraft verloren? Und wie oft hast du dir in solchen Situationen geschworen Jetzt erst recht! Ein paar Stunden noch, ein letzter Anstieg! Der Schmerz ist nicht real, er existiert nur in deiner Vorstellung! Kontrolliere ihn, zerstöre ihn, schalte ihn aus und mach weiter. Lass deine Gegner leiden, gib´s ihnen! Ich bin egoistisch nicht wahr? Sport ist egoistisch, weil man egoistisch sein muss, um kämpfen und leiden zu können, um die Einsamkeit und die Hölle zu lieben. Stehen bleiben, husten, frieren, die Beine nicht mehr spüren, Übelkeit, Erbrechen, Kopfschmerzen, Blessuren, Blut… Was gibt es schöneres? Das Geheimnis liegt nicht in den Beinen, sondern in der Kraft, die dich hinaustreibt zum laufen, auch wenn es regnet, stürmt oder schneit. Auch wenn Blitze direkt neben dir in Bäume einschlagen. Auch wenn Schneeklumpen und Hagelkörner deine Beine, deinen fast nackten Körper gegen den Sturm voranpeitschen und dir die Tränen in die Augen treiben. Wenn du weitermachen willst, musst du die Tränen trocknen, damit du die Steine, die Hindernisse, den Himmel sehen kannst. Ja, das Geheimnis besteht darin, die Partys, die Einladungen zu vergessen, ein Mädchen abzuweisen, die warme Decke abzuschütteln… all das zum Teufel zu jagen und rauszugehen in den Regen, bis die Beine bluten, weil du im Matsch gestürzt, wieder aufgestanden und weitergelaufen bist… so lange, bis deine Beine schließlich aus Leibeskräften schreien: Es reicht! und dich auf irgendeinen fernen Hügel während eines Unwetters im Stich lassen… bis zum bitteren Ende. Die von Schnee völlig durchnässte Laufhose, dazu der eisige Wind der dir ins Gesicht peitscht und deinen Schweiß gefrieren lässt. Leichter Körper, leichte Beine.  Spür, wie die Kraft deiner Beine und das Gewicht deines Körpers konzentriert durch den Mittelfuß auf den Boden treffen und dabei einen Druck ausüben, der Steine zum Bersten bringen, Planeten zerstören und Kontinente bewegen kann. Mit beiden Beinen in der Luft dahinschweben wie ein Adler und schneller laufen wie ein Gepard. Oder bergab, wenn deine Füße über Schnee und Matsch abwärtsgleiten, kurz bevor du erneut durchstartest, um dich so frei zu fühlen, das du abhebst, dass du vor Wut, Hass und Liebe zu schreien beginnst, im Herzen des Waldes, wo nur die Nager und Vögel in ihren Nestern deine Beichte hören können… Nur sie kennen deine Geheimnisse, deine Ängste. Denn verlieren heißt sterben. Und du kannst nicht sterben, ohne alles gegeben zu haben, ohne das Schmerzen und Wunden dich zum Weinen gebracht hätten. Du darfst nicht aufgeben, du musst kämpfen bis zuletzt. Denn Ruhm ist das allergrößte, und dein einziges Ziel muss es sein, ihn zu erlangen oder auf der Strecke zu bleiben, nachdem du alles gegeben hast. Du musst kämpfen, leiden und sterben. Sonst hat alles keinen Sinn. Es ist an der Zeit zu leiden, es ist an der Zeit zu kämpfen, es ist an der Zeit zu Siegen. Lauf oder stirb.",
+            "Hier, wie in so vielen Ländern in Europa, meint man, die Wissenschaft sei nur dann eine würdige Beschäftigung für den Geist, wenn dabei für die Welt ein materieller nutzen herauskomme.",
+            "Ich blickte auf. Über der Flussmündung hing eine schwarze Wolkenwand, und der Stille Wasserweg, der bis zu den Enden der Erde reicht, strömte düster über dem bedeckten Himmel dahin- schien hineinzuführen in das Herz einer gewaltigen Finsternis.",
+            "Wir sind manchmal viel zu sehr geneigt zu glauben, dass die gegenwärtigen Vorraussetzungen für einen Stand der Dinge die einzig möglichen seien.",
+            "Revolution ist besser, weil dann nur die marschieren, die wirklich wollen.",
+            "Nehmt es zur Kenntnis, ihr Politiker des 21. Jahrhunderts: Eine Grundvoraussetzung für das intellektuelle Gebäude, auf dem eure Tabellen, eure klimatisierten Büros und Mobiltelefone fußen,  war der von Neugier getriebene Versuch, die Bewegung der Planeten und den Platz der Erde unter den Sternen zu verstehen.",
+            "Manchmal glaube ich, wir sind allein im Universum, und manchmal glaube ich es nicht. In beiden Fällen ist die Vorstellung ziemlich beängstigend.",
+            "Dieser Raum, den wir für unendlich erklären […] In ihm sind unendlich viele Welten von derselben Art wie unsere eigene.",
+            "Meine Regel ist, in dem, was ich einmal vorgenommen, so fest und beharrlich als nur immer zu sein, und auch bei Handlungen, die ich nur auf ganz zweifelhafte Gründe hin oder ganz ohne vernunftmäßige Begründung begann, genau ebenso sicher und entschlossen zu beharren, als wäre ich mir ganz gewiß darüber.",
+            "Es gibt naive Fragen, langweilige Fragen, schlecht formulierte Fragen, Fragen, die nach unzureichender Selbstkritik gestellt werden. Aber jede Frage ist ein Aufschrei, die Welt verstehen zu wollen. Es gibt keine dummen Fragen.",
+            "Man sagt, dass man demütig werde, wenn man sich mit Astronomie beschäftigt, und dass das den Charakter forme.",
+            "Aus dieser großen Entfernung betrachtet, scheint die Erde nicht besonders bedeutsam zu sein. Für uns Menschen ist es jedoch völlig anders. Denken wir doch einmal über diesen Punkt nach! Dieser blaue Punkt im All ist hier, er ist zu Hause, er ist wir. Jeder Mensch, den du liebst, den Du kennst, von dem Du jemals gehört hast – jeder Mensch, den es je gegeben hat lebte hier, auf diesem Punkt All unsere Freude und unser Leid, tausende von überzeugten Religionen, Ideologien und Wirtschaftstheorien, jeder Jäger und Sammler, jeder Held oder Feigling, jeder Schöpfer oder Zerstörer einer Zivilisation, jeder König oder Bauer, jedes junge Liebespaar, jede Mutter und jeder Vater, jedes hoffnungsvolle Kind, jeder Erfinder und Entdecker, jeder Moralapostel, jeder korrupte Politiker, jeder »Superstar«, jeder »herausragende Herrscher«, jeder Heilige und jeder Sünder in der Geschichte der Menschheit lebte hier – auf einem Staubkorn, erleuchtet von einem Sonnenstrahl. Die Erde ist eine sehr kleine Bühne in einer riesigen kosmischen Arena. Denken wir nur an die Ströme von Blut, die all die Generäle und Herrscher vergossen haben, um für kurze Zeit ruhmvoll herrschen zu können … über einen Bruchteil eines Punkts im All. Denken wir an die endlosen Grausamkeiten, welche die Bewohner einer Region dieses Pixels, den kaum von ihnen zu unterscheidenden Bewohnern einer anderen Region angetan haben. Wie oft sie sich falsch verstehen! Wie sehr sie darauf aus sind, einander zu töten! Wie leidenschaftlich sie einander hassen! Unser eitles Gehabe, unsere eingebildete »Wichtigkeit«, die Illusion, dass wir im Universum einen besonderen Platz einnehmen – all das wird in Frage gestellt von diesem blassen, blauen Punkt im All. Unser Planet ist ein einsamer Fleck in der großen kosmischen Dunkelheit. Wir sind unbedeutend in diesem endlosen Weltall und es gibt keinen Hinweis darauf, dass irgendjemand oder irgendetwas von irgendwoher zu uns kommen wird, um uns vor uns selbst zu schützen. Nach allem, was wir bisher wissen, ist die Erde die einzige Welt, auf der es Leben gibt. In der näheren Zukunft gibt es keinen anderen Ort im Unviersum, wohin die Menschheit auswandern könnte. Wir können andere Planeten besuchen, aber es ist noch lange nicht daran zu denken, sich woanders niederzulassen. Die Erde der Ort, an dem wir uns bewähren müssen  ob wir wollen oder nicht. Man sagt, dass man demütig werde, wenn man sich mit Astronomie beschäftigt, und dass das den Charakter forme. Dieses von weit her aufgenommene Bild unserer winzigen Welt ist vielleicht das beste Beispiel dafür, wie töricht es ist, wenn wir uns einbilden, etwas Besonderes zu sein. Für mich unterstreicht es unsere Verantwortung, freundlicher miteinander umzugehen. Es unterstreicht, dass wir diesen blauen Punkt im All wertschätzen und bewahren müssen. Er ist das einzige Zuhause, das wir kennen.",
+            "Manche Verführer besitzen eine geradezu übernatürlich feine Wahrnehmung für die Signale derer, die sie zu verführen versuchen. Andere probieren es auf das Geratewohl und haben nach dem Gesetz der großen Zahlen öfters Erfolg.",
+            "Das Universum ist keine große Sache, wenn es nicht das Zuhause wäre für Menschen die man liebt.",
+            "Ich fürchte mich nicht vor dem Erhängtwerden… Ich möchte überhaupt lieber sterben, als diese Gesichter nochmal zu sehen… dieses Maß an Verkommenheit… Ich habe den Teufel gesehen, das werde ich nicht mehr los.",
+            "Wie beweglich ein Mensch ist- und wie starr und unbeugsam.",
+            "Wer in einer Führungsposition ist und glaubt, nie falschzuliegen, wer sein Urteil oder seinen Standpunkt nie infrage stellt, ist eine Gefahr für die Organisation und die Menschen, die er führt.",
+            "Die Mehrheit sind nicht die, die schreien Ihr spaltet&zerstöret immerfort. Humanität ist stärker, als Euer garstig Wort.",
+            "Afrika ist eine Schule für den Charakter, aber auch ein Friedhof der Illusion", "Bete, dass deine Einsamkeit der Stachel  werde, etwas zu finden, wofür du leben kannst, und groß genug um zu sterben.",
+            "Ich wusste, die Welt würde nie mehr dieselbe sein.Einige Leute lachten, einige Leute weinten, die meisten waren still. Ich erinnerte mich an die Hindu Schrift der Bhagavat Gita. Vishnu versucht den Prinzen davon zu überzeugen seine Pflicht zu tun. Um ihn zu überzeugen, nahm er seine vielarmige Gestalt an und sagte: Nun bin ich der Tod, der Zerstörer der Welten. Ich denke wir alle dachten das, auf die eine oder andere Weise."];
+
+        var quotesFrom = ["Marcel Proust", "Marcel Proust", "Robert J. Oppenheimer", "Otto Lilienthal ", "Frank Oppenheimer",
+            "Dylan Thomas", "Marcel Proust", "Marcel Proust", "Marcel Proust", "Marcel Proust", "Marcel Proust", "Kilian Jornet", "Alexander von Humbold",
+            "Joseph Conrad", "Marcel Proust", "Marcel Proust", "Brian Cox", "Arthur C. Clarke", "Giordano Bruno", "René Descartes", "Carl Sagen",
+            "Carl Sagen", "Carl Sagen", "Michael Wolff", "Stephen Hawking", "Dietrich Bonhoeffer", "Das Ultimatum- Mordechai Roshwald",
+            "James Comey", "Peter Altmeier", "Vladimir Drachoussoff", "Dag Hammarskjöld- UNO Generalsekretär 1961", "J. Robert Oppenheimer"];
+
+
+        var lastrnd;
+
+
+        function randomize() {
+            var range = quotesArr.length;
+            var randomIndex = Math.floor(Math.random() * range);
+            while (randomIndex == lastrnd) {
+                randomIndex = Math.floor(Math.random() * range);
+            }
+            lastrnd = randomIndex;
+            var quote = quotesArr[randomIndex];
+            var quoteFrom = quotesFrom[randomIndex];
+
+            document.getElementById('quote').innerHTML = quote;
+            document.getElementById('quoteFrom').innerHTML = quoteFrom;
+        }
+
+    </script>
+</body>
+
+</html>

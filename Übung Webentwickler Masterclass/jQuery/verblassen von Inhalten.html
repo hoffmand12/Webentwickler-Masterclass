@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>-->
+    <script src="jquery-3.7.0.min.js"></script>
+
+    <style>
+        #viereck{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">Endlich mal jQuery</p>
+    <button type="button" id="toggle">Verblassen</button>
+    <div id="viereck"></div>
+
+<script>
+    var aktiv = true;
+    $("#toggle").click(function(){
+        if(aktiv){
+            $("#viereck").fadeOut(2000, function(){
+            aktiv = false;
+            $("#toggle").text("Anzeigen");
+        });
+        }else{
+            $("#viereck").fadeIn(2000, function(){
+                    aktiv = true;
+                    $("#toggle").text("Verblassen");
+            });
+        }
+       
+    });
+
+</script>
+
+</body>
+</html>
